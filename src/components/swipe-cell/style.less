@@ -1,0 +1,35 @@
+.swipe-cell {
+  overflow: hidden;
+  position: relative;
+  &_left,
+  &_right {
+    top: 0;
+    height: 100%;
+    position: absolute;
+    .spt-button {
+      float: right;
+    }
+    .spt-button + .spt-button {
+      margin: 0;
+    }
+  }
+  &_right {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+    .spt-button {
+      float: left;
+    }
+  }
+  &_left {
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  &_wrapper,
+  &_left,
+  &_right {
+    -webkit-transition: -webkit-transform 0.15s ease-in-out;
+    transition: -webkit-transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  }
+}

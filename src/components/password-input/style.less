@@ -1,0 +1,140 @@
+@import '../../style/var.less';
+.spt-password-input {
+  position: relative;
+  user-select: none;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  .spt-password-input__grid {
+    position: relative;
+  }
+  .spt-password-input__val {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 44px;
+    line-height: 50px;
+    opacity: 0;
+  }
+  &__security {
+    display: flex;
+    height: 48px;
+    position: relative;
+    border: 1px solid @passwordInput-border-color;
+    border-radius: 3px;
+    padding: 3px;
+    overflow: hidden;
+    li {
+      position: relative;
+      flex: 1;
+      display: inline-block;
+      // width: 54px;
+      height: 100%;
+      font-size: 24px;
+      line-height: 48px;
+      text-align: center;
+      background-color: @passwordInput-background-color;
+      border-right: 1px solid @passwordInput-border-color;
+      &:last-child {
+        border-right: none;
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        margin: -5px 0 0 -5px;
+        background-color: @black;
+        border-radius: 100%;
+        visibility: hidden;
+      }
+      @keyframes spt-cursor-flicker {
+        from {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .spt-password-input__cursor {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1px;
+        height: 40%;
+        background-color: @text-color;
+        transform: translate(-50%, -50%);
+        animation: 1s spt-cursor-flicker infinite;
+      }
+    }
+  }
+  // 聚焦
+  &-cursor {
+    border-color: @active;
+  }
+  .spt-password-input__field {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 16px;
+    overflow: hidden;
+    color: @text-color;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: @passwordInput-background-color;
+    .spt-password-input__label {
+      flex: none;
+      width: 90px;
+      color: @text-color;
+    }
+    .spt-password-input__value {
+      position: relative;
+      overflow: hidden;
+      color: @gray-dark;
+      text-align: right;
+      vertical-align: middle;
+      flex: 1;
+      .spt-password-input__body {
+        display: flex;
+        align-items: center;
+        .spt-password-input__control {
+          background: @passwordInput-background-color;
+          border: 0;
+          color: @text-color;
+          font-size: @font-size-md;
+          height: 24px;
+          line-height: 24px;
+          margin: 0;
+          padding: 0;
+          resize: none;
+          width: 100%;
+          font: inherit;
+          &:focus {
+            outline: none;
+          }
+        }
+        .spt-password-input__shade {
+          letter-spacing: 4px;
+          font-size: 24px;
+        }
+        .spt-password-input-icon {
+          margin-right: -8px;
+          padding: 0 8px;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+}

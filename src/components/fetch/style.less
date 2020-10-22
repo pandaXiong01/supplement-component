@@ -1,0 +1,58 @@
+@import '../../style/var.less';
+@import "../../style/fn.less";
+@color: #aaa;
+
+.@{lib-name}-fetch-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  &:after {
+    display: block;
+    content: "\0020";
+    position: absolute;
+    top: -1px; /*no*/
+    left: 0;
+    right: 0; /*no*/
+    z-index: 11111;
+    height: 1px; /*no*/
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.2); /*no*/
+  }
+}
+
+.@{lib-name}-fetch-container-inner {
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.@{lib-name}-fetch__animation {
+  transition: all ease 0.3s;
+}
+
+.@{lib-name}-fetch-tip-area {
+  color: @color;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 2;
+}
+
+.@{lib-name}-fetch-tip-area.@{lib-name}-fetch__top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.@{lib-name}-fetch-tip-area.@{lib-name}-fetch__bottom {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.@{lib-name}-fetch-loading-wrap > .@{lib-name}-loading {
+  display: inline-block;
+}
