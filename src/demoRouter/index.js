@@ -1,11 +1,10 @@
-import Vue from "vue"
 import VueRouter from "vue-router"
 import home from "../demo"
 import sticky from "../demo/sticky";
 import fetch from "../demo/fetch";
-import passwordInput from "../components/password-input"
-
-Vue.use(VueRouter)
+import passwordInput from "../demo/password-input"
+import keyBoard from "../demo/key-board";
+import swipeCell from "../demo/swipe-cell";
 
 const routes = [
   {
@@ -39,6 +38,22 @@ const routes = [
       title: "passwordInput",
     },
     component: passwordInput,
+  },
+  {
+    path: "/keyBoard",
+    name: "keyBoard",
+    meta: {
+      title: "keyBoard",
+    },
+    component: keyBoard,
+  },
+  {
+    path: "/swipeCell",
+    name: "swipeCell",
+    meta: {
+      title: "swipeCell",
+    },
+    component: swipeCell,
   },
 ]
 
